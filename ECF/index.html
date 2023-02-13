@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="assets/js/app.js" defer></script>
+    <title>Netflux</title>
+</head>
+<body>
+    <header class="container">
+    <h1 class="text-center">Liste des films</h1>     
+    </header>
+    <main class="container">
+        <section id="addNewFilm" class="d-flex flex-column">
+            <button id="add" class="btn btn-outline-primary btn-lg">Ajouter</button>
+        </section>
+        <section class="container-fluid">
+            <label for="filter">Filtrer par : </label><br>
+            <select name="filterMovie" id="filter" autocomplete="off">
+                <option value="nothing"></option>
+                <option value="year">Année</option>
+                <option value="title">Titre</option>
+                <option value="author">Réalisateur</option>
+            </select>
+        </section>
+        <section class="container-fluid">
+            <table class="table table-bordeless table-striped table-responsive-sm">
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Année</th>
+                        <th>Réalisateur</th>
+                    </tr>
+                </thead>
+               <tbody id="myTable">
+
+               </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="assets/js/requestApi.js" defer></script>
+    <title>Videothèque</title>
+</head>
+
+<body>
+    <header class="container">
+        <h1>Videothèque NetFlux</h1>
+    </header>
+    <main>
+        <section class="container">
+            <div class="d-sm-flex flex-column">
+                <input id="titleMovie" placeholder="Entrez le titre d'un film" type="text">
+                <input id="yearMovie" min="1900" placeholder="Entrez l'année" type="number">
+                <select name="typeMovie" id="typeMovie">
+                    <option value=""></option>
+                    <option value="movie">film</option>
+                    <option value="episode">episode</option>
+                    <option value="series">series</option>
+                </select>
+                <button id="search" class="btn btn-outline-success">Search</button>
+            </div>
+        </section>
+        <section id="resultRequest">
+
+        </section>
+        <section>
+        </section>
+    </main>
+</body>
+
+</html>
