@@ -27,7 +27,12 @@ function myTable() {
         button.id = "button" + (i + 1);
         button.classList.add('btn', 'btn-outline-danger')
         cell4.appendChild(button);
+        button.addEventListener('click', ()=> {
+            films.splice(films.indexOf(i));
+            row.remove();
+        })
     }
+
 }
 myTable();
 
@@ -103,6 +108,7 @@ buttonSave.addEventListener("click", () => {
     }
     let parent = buttonSave.parentNode;
     parent.removeChild(buttonSave)
+    
 });
 
 
@@ -137,18 +143,6 @@ let selectFilter = document.getElementById("filter");
         }
     });
 
-
-// add event on delete buttons
-// event do not work 
-document.addEventListener('click', function (event) {
-    const clickedButton = event.target.closest('button[id^="button"][id$="button"]');
-    if (!clickedButton) return;
-    const row = clickedButton.closest('tr');
-    if (!row) return;
-    while (row.firstChild) {
-        row.removeChild(row.firstChild);
-    }
-});
 
 
 
