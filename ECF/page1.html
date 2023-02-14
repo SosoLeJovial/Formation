@@ -19,22 +19,25 @@
     </header>
     <main>
         <section class="container">
-            <div class="d-sm-flex flex-column">
+            <div class=" col-6 d-sm-flex flex-column">
                 <input id="titleMovie" placeholder="Entrez le titre d'un film" type="text">
                 <input id="yearMovie" min="1900" placeholder="Entrez l'année" type="number">
-                <select name="typeMovie" id="typeMovie">
-                    <option value=""></option>
-                    <option value="movie">film</option>
-                    <option value="episode">episode</option>
-                    <option value="series">series</option>
-                </select>
-                <button id="search" class="btn btn-outline-success">Search</button>
+                <div class="col-6 d-flex justify-content-center">
+                        <select name="typeMovie" id="typeMovie">
+                        <option value=""></option>
+                        <option value="movie">film</option>
+                        <option value="game">game</option>
+                        <option value="series">series</option>
+                        </select>
+                    <button id="search" class="btn btn-outline-success">Search</button>
+                </div>
+              
             </div>
         </section>
         <section id="resultRequest">
 
         </section>
-        <section>
+        <section id="pagination">
         </section>
     </main>
 </body>

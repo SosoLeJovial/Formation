@@ -7,13 +7,18 @@ let titleMovie = document.querySelector('#titleMovie')
 let typeChoose = document.querySelector('#typeMovie')
 let buttonSearch = document.querySelector('#search')
 let yearMovie = document.querySelector('#yearMovie')
-let currentPage = 1
+let currentPage = 1;
 
 
-function searchOmdb() {
+function searchOmdb(page) {
+    pagination.innerHTML = "";
+    if(page == undefined){
+        page = 1;
+    }
+
     let displaySearch = document.querySelector('#resultRequest')
     displaySearch.innerHTML = "";
-    let query = `http://www.omdbapi.com/?apikey=431b17b0&page=${currentPage}&r=json`;
+    let query = `http://www.omdbapi.com/?apikey=431b17b0&page=${page}&r=json`;
 
     if (titleMovie.value !== "") {
         query += `&s=${titleMovie.value}`;
@@ -47,13 +52,15 @@ function searchOmdb() {
                 })
                 return;
             }
-            data.Search.forEach(movie => {
+
+            function affichage(data) {
+                data.Search.forEach(movie => {
                 const item = document.createElement('div');
                 item.id = "cardResult";
                 let poster = movie.Poster;
                 item.innerHTML = `
-                  <h2>${movie.Title}</h2>
-                  <p>Released: ${movie.Year}</p>
+                <h2>${movie.Title}</h2>
+                <p>Released: ${movie.Year}</p>
                 `;
                 if (poster !== 'N/A') {
                     let img = document.createElement('img');
@@ -61,12 +68,39 @@ function searchOmdb() {
                     item.appendChild(img);
                 }
                 displaySearch.appendChild(item);
-            });
+            })
+            } 
+            let numberOfPage = Math.floor(data.totalResults/data.Search.length);
+            if(numberOfPage >= 10){
+                numberOfPage = 10;
+            }
+            
+            affichage(data);
+
+            pagination(numberOfPage)
+            function pagination(pages){
+                let pagination = document.querySelector('#pagination');
+                let ul = document.createElement('ul');
+                ul.classList.add('pagination');
+                for(let i =1; i <= pages; i++){
+                    let li = document.createElement('li');
+                    li.classList.add('page-item');
+                    let a = document.createElement('a');
+                    a.classList.add('page-link');
+                    a.href = i; 
+                    a.innerHTML = i;
+                    a.addEventListener('click', function(e) {
+                        e.preventDefault();
+                       searchOmdb(this.getAttribute('href'))
+                    })
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                }
+                pagination.appendChild(ul)
+            }
+            
         })
         .catch(error => console.error(error));
-    titleMovie.value = "";
-    yearMovie.value = "";
-    typeChoose.value = "";
 };
 
-buttonSearch.addEventListener('click', searchOmdb)
+buttonSearch.addEventListener('click', searchOmdb);
