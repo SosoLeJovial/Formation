@@ -60,11 +60,16 @@ function searchOmdb(page) {
                 let poster = movie.Poster;
                 item.innerHTML = `
                 <h2>${movie.Title}</h2>
-                <p>Released: ${movie.Year}</p>
+                <p>${movie.Year}</p>
                 `;
                 if (poster !== 'N/A') {
                     let img = document.createElement('img');
                     img.src = poster;
+                    item.appendChild(img);
+                }
+                if (poster == 'N/A') {
+                    let img = document.createElement('img');
+                    img.src = './assets/img/errorNoPngOups.png' ;
                     item.appendChild(img);
                 }
                 displaySearch.appendChild(item);
