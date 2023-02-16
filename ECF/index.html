@@ -6,18 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/app.js" defer></script>
     <title>Netflux</title>
 </head>
 <body>
     <header class="container">
-    <h1 class="text-center">Liste des films</h1>     
+        <nav  class="navbar navbar-expand-lg text-white">
+            <a class="navbar-brand" href="#"><img class="navbar-toggler-icon id="logoPop" src="/assets/img/popcorn.svg" alt=""></a>
+            <div class="navbar-collapse">
+                <div class="navbar-nav">
+                    <li class="nav-item nav-link"><a class="nav-link" href="#"></a>Home</li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#"></a>MyList</li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#"></a>Log In</li>
+                </div>
+            </div>
+            
+        </nav>
+    <h1 class="text-center text-white">Liste des films</h1>     
     </header>
     <main class="container">
         <section id="addNewFilm" class="d-flex flex-column">
             <button id="add" class="btn btn-outline-primary btn-lg">Ajouter</button>
         </section>
-        <section class="container-fluid">
+        <section class="container-fluid text-white-50">
             <label for="filter">Filtrer par : </label><br>
             <select name="filterMovie" id="filter" autocomplete="off">
                 <option value="nothing"></option>
@@ -27,7 +39,7 @@
             </select>
         </section>
         <section class="container-fluid">
-            <table class="table table-bordeless table-striped table-responsive-sm">
+            <table class="table table-bordeless table-striped table-responsive-sm text-white">
                 <thead>
                     <tr>
                         <th>Titre</th>
@@ -41,7 +53,7 @@
             </table>
         </section>
     </main>
-    <footer>
+    <footer class="d-flex justify-content-center align-baseline text-white-50">
         <p>créer par Sofien Tebourbi</p>
     </footer>
 </body>

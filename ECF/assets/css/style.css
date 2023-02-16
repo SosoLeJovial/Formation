@@ -1,9 +1,19 @@
 /* TODO */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-
+html{
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+body {
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 75.2%);
+}
+#logoPop {
+    height: 30px;
+}
 
 #cardResult {
-background: linear-gradient(#ff7878, #000000);
+background: white;
 margin: 10px;
 border-radius: 20px;
 }
