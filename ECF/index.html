@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/app.js" defer></script>
     <title>Netflux</title>
 </head>
 <body>
     <header class="container">
-        <nav  class="navbar navbar-expand-lg text-white">
-            <a class="navbar-brand" href="#"><img class="navbar-toggler-icon id="logoPop" src="./assets/img/popcorn.svg" alt=""></a>
+        <nav class="navbar navbar-expand-lg text-white">
+            <a class="navbar-brand" href="#">
+              <img class="navbar-toggler-icon" id="logoPop" src="./assets/img/popcorn.svg" alt="">
+            </a>
             <div class="navbar-collapse">
-                <div class="navbar-nav">
-                    <li class="nav-item nav-link"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" href="#">MyList</a></li>
-                    <li class="nav-item nav-link"><a id="logIn" class="nav-link" href="#">Log In</a></li>
-                </div>
+              <div class="navbar-nav mr-auto">
+                <li class="nav-item nav-link"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item nav-link"><a class="nav-link" href="#">MyList</a></li>
+                <li class="nav-item nav-link"><a id="logIn" class="nav-link" href="#">Log In</a></li>
+              </div>
+              <div class="navbar-nav ml-auto">
+                <button class="btn btn-warning btn-round">Search</button>
+              </div>
             </div>
-            
-        </nav>
-    <h1 class="text-center text-white">Liste des films</h1>     
+          </nav>
+          
+        <h1 class="text-center text-white">Liste des films</h1>
     </header>
     <main class="container">
-        <section id="addNewFilm" class="d-flex flex-column">
-            <button id="add" class="btn btn-outline-primary btn-lg">Ajouter</button>
+        <section class="d-flex align-items-center justify-content-between">
+            <article id="addNewFilm" class="d-flex flex-column">
+                <button id="add" class="btn btn-outline-primary btn-lg">Ajouter</button>
+            </article>
+            <article class="container-fluid text-white-50">
+                <label for="filter">Filtrer par : </label><br>
+                <select name="filterMovie" id="filter" autocomplete="off">
+                    <option value="nothing"></option>
+                    <option value="year">Année</option>
+                    <option value="title">Titre</option>
+                    <option value="author">Réalisateur</option>
+                </select>
+            </article>
         </section>
-        <section class="container-fluid text-white-50">
-            <label for="filter">Filtrer par : </label><br>
-            <select name="filterMovie" id="filter" autocomplete="off">
-                <option value="nothing"></option>
-                <option value="year">Année</option>
-                <option value="title">Titre</option>
-                <option value="author">Réalisateur</option>
-            </select>
-        </section>
+
         <section class="container-fluid">
             <table class="table table-bordeless table-striped table-responsive-sm text-white">
                 <thead>
@@ -47,9 +57,8 @@
                         <th>Réalisateur</th>
                     </tr>
                 </thead>
-               <tbody id="myTable">
-
-               </tbody>
+                <tbody id="myTable">
+                </tbody>
             </table>
         </section>
     </main>
@@ -57,4 +66,5 @@
         <p>créer par Sofien Tebourbi</p>
     </footer>
 </body>
+
 </html>
