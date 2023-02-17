@@ -143,6 +143,17 @@ let selectFilter = document.getElementById("filter");
         }
     });
 
+// NavBar Items
 
+const buttonLogIn = document.querySelector('#logIn'); 
+
+buttonLogIn.addEventListener('click', function(){
+    swal({
+        icon : "info",
+        title : 'Incoming feature',
+        timer : 3000,
+        
+    });
+});
 
 

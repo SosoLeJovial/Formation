@@ -1,17 +1,24 @@
 /* TODO */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-html{
-    height: 100%;
+
+body {
+    min-height: 100vh;
     margin-left: auto;
     margin-right: auto;
-}
-body {
     background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 75.2%);
 }
+
+/* NavBar */
 #logoPop {
     height: 30px;
 }
 
+#logIn {
+    background-color: none;
+    border: none;
+}
+
+/* request api */
 #cardResult {
 background: white;
 margin: 10px;
@@ -42,3 +49,10 @@ img {
     flex: 1;
     max-width: 33.33%;
 }
+
+
+/* swal configuration theme */
+.swal-overlay {
+    background-color: rgba(168, 195, 189, 0.45);
+  }
+  
