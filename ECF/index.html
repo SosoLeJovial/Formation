@@ -25,7 +25,7 @@
                 <li class="nav-item nav-link"><a id="logIn" class="nav-link" href="#">Log In</a></li>
               </div>
               <div class="navbar-nav ml-auto">
-                <button class="btn btn-warning btn-round">Search</button>
+                <button class="btn btn-warning btn-round"><a href="/ECF/page1.html">Search</a></button>
               </div>
             </div>
           </nav>
@@ -33,11 +33,14 @@
         <h1 class="text-center text-white">Liste des films</h1>
     </header>
     <main class="container">
-        <section class="d-flex align-items-center justify-content-between">
+
+        <section class="d-flex align-items-center justify-content-around">
+
             <article id="addNewFilm" class="d-flex flex-column">
                 <button id="add" class="btn btn-outline-primary btn-lg">Ajouter</button>
             </article>
-            <article class="container-fluid text-white-50">
+
+            <article class="d-block text-white-50">
                 <label for="filter">Filtrer par : </label><br>
                 <select name="filterMovie" id="filter" autocomplete="off">
                     <option value="nothing"></option>
@@ -55,10 +58,12 @@
                         <th>Titre</th>
                         <th>Année</th>
                         <th>Réalisateur</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="myTable">
                 </tbody>
+                <tr></tr>
             </table>
         </section>
     </main>
