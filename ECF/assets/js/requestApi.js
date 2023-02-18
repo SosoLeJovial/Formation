@@ -47,7 +47,7 @@ function searchOmdb(page) {
             if (data.Response === 'False') {
                 swal({
                     icon: 'error',
-                    text: data.Error,
+                    text: "Aucun résultat n'a été trouvé",
                     timer: '2000',
                 })
                 return;

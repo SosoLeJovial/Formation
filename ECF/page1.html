@@ -7,15 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="assets/js/requestApi.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="assets/js/requestApi.js" defer></script>
     <title>Videothèque</title>
 </head>
 
 <body>
     <header class="container">
-        <h1>Videothèque NetFlux</h1>
+        <nav class="navbar navbar-expand-lg text-white">
+            <a class="navbar-brand" href="#">
+                <img class="navbar-toggler-icon" id="logoPop" src="./assets/img/popcorn.svg" alt="">
+            </a>
+            <div class="navbar-collapse">
+                <div class="navbar-nav mr-auto">
+                    <li class="nav-item nav-link"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#">MyList</a></li>
+                    <li class="nav-item nav-link"><a id="logIn" class="nav-link" href="#">LogIn</a></li>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <button class="btn btn-warning btn-round"><a href="/ECF/page1.html">Search</a></button>
+                </div>
+            </div>
+        </nav>
+
+        <h1 class="text-center text-white">Liste des films</h1>
     </header>
     <main>
         <section class="container">
@@ -23,23 +39,26 @@
                 <input id="titleMovie" placeholder="Entrez le titre d'un film" type="text">
                 <input id="yearMovie" min="1900" placeholder="Entrez l'année" type="number">
                 <div class="col-6 d-flex justify-content-center">
-                        <select name="typeMovie" id="typeMovie">
+                    <select name="typeMovie" id="typeMovie">
                         <option value=""></option>
                         <option value="movie">film</option>
                         <option value="game">game</option>
                         <option value="series">series</option>
-                        </select>
+                    </select>
                     <button id="search" class="btn btn-outline-success">Search</button>
                 </div>
-              
+
             </div>
         </section>
         <section id="resultRequest">
 
         </section>
-        <section id="pagination">
+        <section id="pagination" class="d-flex justify-content-center">
         </section>
     </main>
+    <footer class="d-flex justify-content-center align-baseline text-white-50">
+        <p>créer par Sofien Tebourbi</p>
+    </footer>
 </body>
 
 </html>
