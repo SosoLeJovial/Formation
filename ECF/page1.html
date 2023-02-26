@@ -15,7 +15,7 @@
 
 <body>
     <header class="container">
-        <nav class="navbar navbar-expand-lg text-white">
+        <nav class="navbar navbar-expand-sm text-white">
             <a class="navbar-brand" href="#">
                 <img class="navbar-toggler-icon" id="logoPop" src="./assets/img/popcorn.svg" alt="">
             </a>
@@ -34,12 +34,12 @@
         <h1 class="text-center text-white">Recherche de film</h1>
     </header>
     <main>
-        <section class="container d-flex d-sm-column">
-            <div class=" col-6 d-sm-flex flex-row">
+        <section id="researchForm">
+            <div>
                 <input id="titleMovie" placeholder="Entrez le titre d'un film" type="text">
                 <input id="yearMovie" min="1900" placeholder="Entrez l'année" type="number">
             </div>
-            <div class="col-6 d-flex justify-content-center">
+            <div>
                     <select name="typeMovie" id="typeMovie">
                         <option value=""></option>
                         <option value="movie">film</option>

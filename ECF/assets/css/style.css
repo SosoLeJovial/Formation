@@ -16,7 +16,7 @@ a:hover {
 }
 /* NavBar */
 #logoPop {
-    height: 30px;
+    max-height: 30px;
 }
 
 #logIn {
@@ -30,17 +30,15 @@ background: white;
 margin: 10px;
 border-radius: 20px;
 }
-/* img {
-    width: 200px;
-    height: 250px;
-    margin: 10px;
-} */
+
 #resultRequest{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 80%;
 }
 #resultRequest h2{
@@ -58,7 +56,16 @@ border-radius: 20px;
     flex: 1;
     max-width: 33.33%;
 }
-
+#researchForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#researchForm div {
+    display: flex;
+    flex-direction: column;
+}
 /* Selection page 1  */
 
 #titleSelection{
@@ -85,9 +92,11 @@ border-radius: 20px;
     width: 100%;
 }
 
-img {
+#resultRequest img {
     width: 100%;
     height: 100%;
+    min-height: 300px;
+    min-width: 150px;
 }
 
 /* swal configuration theme */
@@ -95,3 +104,22 @@ img {
     background-color: rgba(168, 195, 189, 0.45);
   }
   
+
+  @media only screen and (max-width: 550px) {
+    #resultRequest{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    } 
+    #cardResult div {
+        flex: 1;
+        align-items: center;
+        width: 100%;
+    }
+    .imgGallery {
+      min-width: 100%;
+    }
+    #researchForm {
+        flex-direction: column;
+    }
+  }

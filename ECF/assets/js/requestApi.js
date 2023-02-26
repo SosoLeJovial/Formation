@@ -41,7 +41,7 @@ function accueil() {
 
                     let legendHover = document.createElement('figcaption');
                     legendHover.classList.add('legendHover')
-                    legendHover.innerHTML = `${movie.Title}${movie.Year}`;
+                    legendHover.innerHTML = `<span>${movie.Title}</span><span>${movie.Year}</span>`;
                     legendHover.insertBefore(br,legendHover.lastChild);
                     legendHover.style.display = "none";
                     item.appendChild(legendHover);
@@ -113,24 +113,24 @@ function searchOmdb(page) {
             }
 
             function affichage(data) {
-                data.Search.forEach(movie => {
-                        const results = data.Search.slice(0, 9);
-                        results.forEach(movie => {
+                data.Search.slice(0, 9).forEach(movie => {
                             const item = document.createElement('figure');
-                            let br = document.createElement('br');
                             let poster = movie.Poster;
                             item.classList.add('imgGallery');
         
                             let legendHover = document.createElement('figcaption');
                             legendHover.classList.add('legendHover')
-                            legendHover.innerHTML = `${movie.Title}${movie.Year}`;
-                            legendHover.insertBefore(br,legendHover.lastChild);
+                            legendHover.innerHTML = `<span>${movie.Title}</span><span>${movie.Year}</span>`;
                             legendHover.style.display = "none";
                             item.appendChild(legendHover);
+                            
                             if (poster !== 'N/A') {
-        
                                 let img = document.createElement('img');
                                 img.src = poster;
+                                item.appendChild(img);
+                            } else {
+                                let img = document.createElement('img');
+                                img.src = `./assets/img/errorNoPngOups.png`;
                                 item.appendChild(img);
                             }
                             displaySearch.appendChild(item);
@@ -140,7 +140,7 @@ function searchOmdb(page) {
                             item.addEventListener('mouseout', function () {
                                 legendHover.style.display = "none";
                             })
-                        })
+                        
                     }
                 )
             }
